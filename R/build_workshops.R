@@ -1,0 +1,46 @@
+#' Render workshops
+#'
+#' Render the workshops and download the source files if requested.
+#'
+#' @param path path where the workshops files are or a path to a folder where the files will be extracted if download is set to `TRUE`.
+#' @param download a logical. Should the workshop source files be downloaded? Default set to `FALSE`, it `TRUE` then `id` must be specified.
+#' @param id workshops identifier.
+#' @param Rmdfiles R Markdown source files, if `NULL` (default) then
+#' @param verbose a logical. Should extra information be reported on progress?
+#'
+#' @importFrom utils unzip
+#'
+#' @export
+
+build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, verbose = TRUE) {
+
+  if (download) {
+    if (is.null(id)) stop("`id` must be specified!")
+    f <- tempfile()
+    download.file(ghurl(id), f)
+    if (!dir.exists(path)) dir.create(path)
+    unzip(f, exdir = path)
+    install_workshops_pkgs(find_pkgsyaml(path))
+    Rmdfiles <- find_Rmdfiles(path)
+  } else {
+    if (is.null(Rmdfiles)) {
+      Rmdfiles <- find_Rmdfiles(path)
+    }
+  }
+
+  if (!length(Rmdfiles)) stop("No source file found")
+
+  render_workshops(Rmdfiles)
+  if (verbose) message("Workshops successfully rendered.")
+
+  invisible(NULL)
+}
+
+find_pkgsyaml <- function(path = ".") list.files(path = path, pattern =
+  "^pkgs.yaml$", recursive = TRUE, full.names = TRUE)
+
+find_Rmdfiles <- function(path = ".") list.files(path = path, pattern =
+   "^workshop.*[Rr]md$", recursive = TRUE, full.names = TRUE)
+
+ghurl <- function(id)
+  sprintf("https://github.com/QCBSRworkshops/workshop%02d/archive/dev.zip", id)

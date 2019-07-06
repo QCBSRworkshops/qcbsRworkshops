@@ -19,4 +19,5 @@ Imports:
     remotes,
     rmarkdown,
     utils,
-    yaml
+    yaml,
+    xaringan
