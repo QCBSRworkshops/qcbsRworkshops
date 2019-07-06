@@ -1,0 +1,19 @@
+Package: qcbsRworkshops
+Title: Render QCBS R workshops
+Version: 0.0.0.9000
+Authors@R:
+  c(
+    person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),
+    person("Marie-Hélène", "Brice", comment = c(ORCID = "0000-0003-0390-4833"), role = c("aut"))
+    )
+Description: Set of helper functions to render QCBS R workshops.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Suggests:
+    testthat
+Imports:
+    devtools,
+    rmarkdown
