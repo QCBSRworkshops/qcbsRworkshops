@@ -16,4 +16,7 @@ Suggests:
     testthat
 Imports:
     devtools,
-    rmarkdown
+    remotes,
+    rmarkdown,
+    utils,
+    yaml
