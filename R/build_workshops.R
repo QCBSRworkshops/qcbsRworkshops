@@ -20,7 +20,6 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     download.file(ghurl(id), f)
     if (!dir.exists(path)) dir.create(path)
     unzip(f, exdir = path)
-    install_workshops_pkgs(find_pkgsyaml(path))
     Rmdfiles <- find_Rmdfiles(path)
   } else {
     if (is.null(Rmdfiles)) {
@@ -28,6 +27,7 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     }
   }
 
+  install_workshops_pkgs(find_pkgsyaml(path))
   if (!length(Rmdfiles)) stop("No source file found")
 
   render_workshops(Rmdfiles)
