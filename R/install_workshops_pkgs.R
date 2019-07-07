@@ -9,7 +9,12 @@
 #' @export
 
 install_workshops_pkgs <- function(file = "pkgs.yaml", verbose = TRUE) {
-  lapply(file, install_workshop_pkgs_indiv, verbose = verbose)
+  if (!length(file)) {
+    warning("No `", file, "` found!")
+  } else {
+    lapply(file, function(x) install_workshop_pkgs_indiv(x, verbose = verbose))
+  }
+  invisible(NULL)
 }
 
 install_workshop_pkgs_indiv <- function(file = "pkgs.yaml", verbose = TRUE) {
@@ -17,8 +22,7 @@ install_workshop_pkgs_indiv <- function(file = "pkgs.yaml", verbose = TRUE) {
 
   nbpkgs <- Reduce("+", lapply(ls_file, length))
   if (nbpkgs) {
-    if (verbose)
-      message("Found ", nbpkgs, " to be installed if not already!")
+    if (verbose) message(nbpkgs, " packages required.")
     if (length(ls_file$cran_pkgs)) {
       install_cran_pkgs(ls_file$cran_pkgs)
     }

@@ -6,15 +6,19 @@ Authors@R:
     person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),
     person("Marie-Hélène", "Brice", comment = c(ORCID = "0000-0003-0390-4833"), role = c("aut"))
     )
-Description: Set of helper functions to render QCBS R workshops.
+Description: Set of helper functions to ease contribution to QCBS R workshops.
 License: GPL-3
 Encoding: UTF-8
+URL: https://github.com/QCBSRworkshops/qcbsRworkshops, https://github.com/QCBSRworkshops/QCBSRworkshops.github.io
+BugReports: https://github.com/QCBSRworkshops/qcbsRworkshops/issues
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Suggests:
     testthat
 Imports:
+    cli,
+    crayon,
     devtools,
     remotes,
     rmarkdown,

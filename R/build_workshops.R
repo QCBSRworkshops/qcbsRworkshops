@@ -16,10 +16,8 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
 
   if (download) {
     if (is.null(id)) stop("`id` must be specified!")
-    f <- tempfile()
-    download.file(ghurl(id), f)
     if (!dir.exists(path)) dir.create(path)
-    unzip(f, exdir = path)
+    download_workshop(id, path, verbose)
     Rmdfiles <- find_Rmdfiles(path)
   } else {
     if (is.null(Rmdfiles)) {
@@ -27,12 +25,20 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     }
   }
 
-  install_workshops_pkgs(find_pkgsyaml(path))
+  install_workshops_pkgs(find_pkgsyaml(path), verbose = verbose)
   if (!length(Rmdfiles)) stop("No source file found")
 
-  render_workshops(Rmdfiles)
-  if (verbose) message("Workshops successfully rendered.")
+  render_workshops(Rmdfiles, verbose = verbose)
+  message(crayon::green(cli::symbol$tick, " Workshops successfully rendered."))
 
+  invisible(NULL)
+}
+
+download_workshop <- function(id, path, verbose) {
+  f <- tempfile(tmpdir = ".")
+  download.file(ghurl(id), f, quiet = !verbose)
+  unzip(f, exdir = path)
+  unlink(f)
   invisible(NULL)
 }
 
