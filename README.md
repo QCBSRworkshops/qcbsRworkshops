@@ -14,23 +14,25 @@ install.packages("remotes")
 remotes::install_github("QCBSRworkshops/qcbsRworkshops")
 ```
 
-## Examples
-
-Once installed, first load the library.
+Once installed, you can load the package:
 
 ``` r
 library(qcbsRworkshops)
 ```
 
-Then, there are two options:
+## How to
+
+### Build workshops
+
+There are two options:
 
 1. the sources of the workshop are already in your computer, then use:
 
 ``` r
 # if the workshop folder is the current directory (preferred), then use
-build_workshop()
+build_workshops()
 # if the path to the workshop folder is "path2workshop", then use
-build_workshop("path2workshop")
+build_workshops("path2workshop")
 ```
 
 2. the sources of a the workshop must be downloaded (a zip file will be downloaded):
@@ -38,6 +40,19 @@ build_workshop("path2workshop")
 ``` r
 build_workshops(download = TRUE, id = 1)
 ```
+
+### Clean workshops
+
+To clean up cache and files created during the build, use
+
+``` r
+# if the workshop folder is the current directory (preferred), then use
+clean_workshops()
+# if the path to the workshop folder is "path2workshop", then use
+build_workshops("path2workshop")
+```
+
+
 
 
 ## Contributor Code of Conduct

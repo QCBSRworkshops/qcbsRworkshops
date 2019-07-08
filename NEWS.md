@@ -1,5 +1,6 @@
 # qcbsRworkshops 0.0.1.9000
 
+* add `clean_workshop()` :sparkles:
 * add small :bug: in `install_repos_pkgs()` and in `install_cran_archived_pkgs()` caused by misuses of lists.
 
 # qcbsRworkshops 0.0.1

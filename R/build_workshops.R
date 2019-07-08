@@ -19,10 +19,10 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     if (!dir.exists(path)) dir.create(path)
     path2 <- tempfile(tmpdir = path)
     download_workshop(id, path2, verbose)
-    Rmdfiles <- find_Rmdfiles(path2)
-  } else if (is.null(Rmdfiles)) Rmdfiles <- find_Rmdfiles(path)
+    Rmdfiles <- find_f(path2, "^workshop.*[Rr]md$")
+  } else if (is.null(Rmdfiles)) Rmdfiles <- find_f(path, "^workshop.*[Rr]md$")
 
-  install_workshops_pkgs(find_pkgsyaml(path), verbose = verbose)
+  install_workshops_pkgs(find_f(path, "^pkgs.yaml$"), verbose = verbose)
   if (!length(Rmdfiles)) stop("No source file found")
 
   render_workshops(Rmdfiles, verbose = verbose)
@@ -30,6 +30,7 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
 
   invisible(NULL)
 }
+
 
 download_workshop <- function(id, path, verbose) {
   f <- tempfile(tmpdir = ".")
@@ -39,11 +40,8 @@ download_workshop <- function(id, path, verbose) {
   invisible(NULL)
 }
 
-find_pkgsyaml <- function(path = ".") list.files(path = path, pattern =
-  "^pkgs.yaml$", recursive = TRUE, full.names = TRUE)
-
-find_Rmdfiles <- function(path = ".") list.files(path = path, pattern =
-   "^workshop.*[Rr]md$", recursive = TRUE, full.names = TRUE)
+find_f <- function(path = ".", pattern) list.files(path = path, pattern =
+  pattern, recursive = TRUE, full.names = TRUE)
 
 ghurl <- function(id)
   sprintf("https://github.com/QCBSRworkshops/workshop%02d/archive/dev.zip", id)
