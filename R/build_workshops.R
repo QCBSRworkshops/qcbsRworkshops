@@ -17,13 +17,10 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
   if (download) {
     if (is.null(id)) stop("`id` must be specified!")
     if (!dir.exists(path)) dir.create(path)
-    download_workshop(id, path, verbose)
-    Rmdfiles <- find_Rmdfiles(path)
-  } else {
-    if (is.null(Rmdfiles)) {
-      Rmdfiles <- find_Rmdfiles(path)
-    }
-  }
+    path2 <- tempfile(tmpdir = path)
+    download_workshop(id, path2, verbose)
+    Rmdfiles <- find_Rmdfiles(path2)
+  } else if (is.null(Rmdfiles)) Rmdfiles <- find_Rmdfiles(path)
 
   install_workshops_pkgs(find_pkgsyaml(path), verbose = verbose)
   if (!length(Rmdfiles)) stop("No source file found")

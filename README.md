@@ -1,14 +1,17 @@
 # qcbsRworkshops
 
-The goal of qcbsRworkshops is to ease the development of the QCBS R workshops.
+[![Build Status](https://travis-ci.org/QCBSRworkshops/qcbsRworkshops.svg?branch=master)](https://travis-ci.org/QCBSRworkshops/qcbsRworkshops)
+
+The goal of qcbsRworkshops :package: is to ease the development of the QCBS R workshops.
 
 
 ## Installation
 
-You can install the development version of qcbsRworkshops with [remote :package:](https://cran.r-project.org/web/packages/remotes/index.html):
+You can install the development version of qcbsRworkshops with [remotes :package:](https://cran.r-project.org/web/packages/remotes/index.html):
 
 ``` r
-remotes::install_github("qcbsRworkshops")
+install.packages("remotes")
+remotes::install_github("QCBSRworkshops/qcbsRworkshops")
 ```
 
 ## Examples
@@ -32,7 +35,7 @@ build_workshop("path2workshop")
 
 2. the sources of a the workshop must be downloaded (a zip file will be downloaded):
 
-```
+``` r
 build_workshops(download = TRUE, id = 1)
 ```
 
