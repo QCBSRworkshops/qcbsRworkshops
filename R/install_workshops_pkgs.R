@@ -10,7 +10,7 @@
 
 install_workshops_pkgs <- function(file = "pkgs.yaml", verbose = TRUE) {
   if (!length(file)) {
-    warning("No `", file, "` found!")
+    warning("No list of packages found!")
   } else {
     lapply(file, function(x) install_workshop_pkgs_indiv(x, verbose = verbose))
   }
@@ -53,7 +53,7 @@ install_cran_pkgs <- function(x) {
 
 install_cran_archived_pkgs <- function(x) {
   for (i in seq_along(x)) {
-    if (!x[i]$pkgname %in% rownames(installed.packages())) {
+    if (!x[[i]]$pkgname %in% rownames(installed.packages())) {
       f <- tempfile()
       download.file(x[[i]]$url, destfile = f)
       install.packages(pkgs = f, type="source", repos = NULL)
@@ -64,7 +64,7 @@ install_cran_archived_pkgs <- function(x) {
 
 install_repos_pkgs <- function(x) {
   for (i in seq_along(x)) {
-    if (!x[i]$pkgname %in% rownames(installed.packages())) {
+    if (!x[[i]]$pkgname %in% rownames(installed.packages())) {
        install.packages(x[[i]]$pkgname, repos = x[[i]]$repos, type="source")
     }
   }
