@@ -16,7 +16,12 @@
 
 baseURL <- function() "https://github.com/QCBSRworkshops"
 qcbstemplate <- function() "/templateWorkshops/archive/master.zip"
-
+template_files <- function() c(
+    "qcbsR-font.css",
+    "qcbsR-header.html",
+    "qcbsR-macros.js",
+    "qcbsR2.css"
+  )
 
 
 download_template <- function(verbose = FALSE) {
@@ -29,10 +34,16 @@ download_template <- function(verbose = FALSE) {
 }
 
 compare_copy_files <- function(fl1, fl2, verbose = TRUE) {
-  out <- md5sum(fl1) == md5sum(fl2)
-  if (!out) {
-    file.copy(fl1, fl2, overwrite = TRUE)
+  if (file.exists(fl2)) {
+    out <- md5sum(fl1) == md5sum(fl2)
+    if (!out) {
+      file.copy(fl1, fl2, overwrite = TRUE)
+      if (verbose) message("'", fl2, "' successfully updated!")
+    }
+  } else {
+    file.copy(fl1, fl2)
     if (verbose) message("'", fl2, "' successfully updated!")
+    out <- NULL
   }
   invisible(out)
 }

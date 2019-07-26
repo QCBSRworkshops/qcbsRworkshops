@@ -11,12 +11,11 @@
 #' @export
 
 update_template <- function(path = ".", verbose = TRUE) {
+  wkshps <- find_d(path, "workshop[0-9]{2}-(fr|en)$")
+  if (!length(wkshps)) stop("No workshop files found!")
   download_template(verbose = verbose)
   nm <- "templateWorkshops-master"
   t_files <- list.files(nm, pattern = "^qcbsR.*[ls]$", full.names = TRUE)
-  wkshps <- find_d(path, "workshop[0-9]{2}-(fr|en)$")
-  ##
-  if (!length(wkshps)) stop("No workshop files found!")
   for (fil_i in t_files) {
     for (fol_j in wkshps) {
       fl2 <- paste0(fol_j, "/", gsub(".*/", "", fil_i))

@@ -5,7 +5,7 @@
 \title{Render workshops}
 \usage{
 build_workshops(path = ".", download = FALSE, id = NULL,
-  Rmdfiles = NULL, verbose = TRUE)
+  Rmdfiles = NULL, update_template = FALSE, verbose = TRUE)
 }
 \arguments{
 \item{path}{path where the workshops files are or a path to a folder where the files will be extracted if download is set to \code{TRUE}.}
@@ -14,7 +14,9 @@ build_workshops(path = ".", download = FALSE, id = NULL,
 
 \item{id}{workshops identifier.}
 
-\item{Rmdfiles}{R Markdown source files, if \code{NULL} (default) then}
+\item{Rmdfiles}{R Markdown source files, if \code{NULL} (default) then, files will be searched for in the current directory.}
+
+\item{update_template}{Should the template files be updated. Note that if these files are missing then they will be downloaded.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }

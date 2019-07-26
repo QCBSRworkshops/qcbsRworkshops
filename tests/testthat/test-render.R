@@ -2,6 +2,7 @@ context("Download and build workshop 1")
 
 dir <- "tmpfiles"
 if (!dir.exists(dir)) dir.create(dir)
+
 ## Cannot test this below with `check()`
 # build_workshops(dir, download = TRUE, id = 1, verbose = FALSE)
 # download_workshops(1)
