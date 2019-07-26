@@ -54,11 +54,13 @@ build_workshops("path2workshop")
 
 ### Update template
 
+To update the template (see https://github.com/QCBSRworkshops/templateWorkshops), use
+
 ``` r
 # if the workshop folder is the current directory (preferred), then use
 update_template()
 # if the path to the workshop folder is "path2workshop", then use
-build_workshops("path2workshop")
+update_template("path2workshop")
 ```
 
 

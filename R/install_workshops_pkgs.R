@@ -3,9 +3,6 @@
 #' @param file path to the list of dependencies
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
-#' @importFrom yaml read_yaml
-#' @importFrom utils download.file install.packages installed.packages
-#' @importFrom remotes install_github
 #' @export
 
 install_workshops_pkgs <- function(file = "pkgs.yaml", verbose = TRUE) {

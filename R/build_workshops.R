@@ -8,8 +8,6 @@
 #' @param Rmdfiles R Markdown source files, if `NULL` (default) then
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
-#' @importFrom utils unzip
-#'
 #' @export
 
 build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, verbose = TRUE) {

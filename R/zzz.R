@@ -5,7 +5,12 @@
 #' @docType package
 #' @name qcbsRworkshops
 #' @keywords internal
+#'
+#' @importFrom remotes install_github
 #' @importFrom tools md5sum
+#' @importFrom utils download.file install.packages installed.packages unzip
+#' @importFrom yaml read_yaml
+
 "_PACKAGE"
 
 
