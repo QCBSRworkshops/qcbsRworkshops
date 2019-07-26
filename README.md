@@ -63,6 +63,13 @@ update_template()
 update_template("path2workshop")
 ```
 
+### Extract R code
+
+[knitr](https://yihui.name/knitr/) provides a nice function that extract R code from all code chunk and this :package: has a wrapper to extract the code for all the workshops in your working directory.
+
+``` r
+extract_Rcode_workshops("path2workshop")
+```
 
 
 ## Contributor Code of Conduct
