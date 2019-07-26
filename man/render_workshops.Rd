@@ -7,10 +7,10 @@
 render_workshops(files, verbose = TRUE)
 }
 \arguments{
-\item{files}{path to the workshops to be rendered.}
+\item{files}{path to the workshops Rms files to be rendered.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }
 \description{
-Render workshops
+Convert RMarkdown files to html presentations.
 }

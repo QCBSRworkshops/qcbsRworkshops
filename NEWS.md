@@ -1,5 +1,6 @@
 # qcbsRworkshops 0.0.2.9000
 
+* add `extract_Rcode_workshops()` :sparkles:
 * `update_template()` handles missing files.
 * `update_template()` is called when template files are missing.
 

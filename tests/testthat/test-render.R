@@ -7,6 +7,7 @@ if (!dir.exists(dir)) dir.create(dir)
 # build_workshops(dir, download = TRUE, id = 1, verbose = FALSE)
 # download_workshops(1)
 # update_template()
+# extract_Rcode_workshops()
 
 lsf <- list.files(dir, recursive = TRUE)
 

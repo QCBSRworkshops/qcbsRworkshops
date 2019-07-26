@@ -1,9 +1,10 @@
 #' Render workshops
 #'
-#' @param files path to the workshops to be rendered.
+#' Convert RMarkdown files to html presentations.
+#'
+#' @param files path to the workshops Rms files to be rendered.
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
-#' @importFrom rmarkdown render
 #'
 #' @export
 

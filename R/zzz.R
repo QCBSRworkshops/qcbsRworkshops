@@ -6,7 +6,9 @@
 #' @name qcbsRworkshops
 #' @keywords internal
 #'
+#' @importFrom knitr purl
 #' @importFrom remotes install_github
+#' @importFrom rmarkdown render
 #' @importFrom tools md5sum
 #' @importFrom utils download.file install.packages installed.packages unzip
 #' @importFrom yaml read_yaml
