@@ -52,6 +52,14 @@ clean_workshops()
 build_workshops("path2workshop")
 ```
 
+### Update template
+
+``` r
+# if the workshop folder is the current directory (preferred), then use
+update_template()
+# if the path to the workshop folder is "path2workshop", then use
+build_workshops("path2workshop")
+```
 
 
 

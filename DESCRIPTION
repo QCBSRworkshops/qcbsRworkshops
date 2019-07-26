@@ -22,6 +22,7 @@ Imports:
     devtools,
     remotes,
     rmarkdown,
+    tools,
     utils,
     yaml,
     xaringan

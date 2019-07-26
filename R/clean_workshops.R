@@ -28,8 +28,3 @@ clean_workshops <- function(path = ".", files = TRUE, cache = TRUE, verbose = TR
   }
 
 }
-
-find_d <- function(path = ".", pattern) {
-  ld <- list.dirs(path = path, recursive = TRUE, full.names = TRUE)
-  ld[grepl(pattern, ld)]
-}

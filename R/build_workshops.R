@@ -18,7 +18,7 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     if (is.null(id)) stop("`id` must be specified!")
     if (!dir.exists(path)) dir.create(path)
     path2 <- tempfile(tmpdir = path)
-    download_workshop(id, path2, verbose)
+    download_workshop_indiv(id, path2, verbose)
     Rmdfiles <- find_f(path2, "^workshop.*[Rr]md$")
   } else if (is.null(Rmdfiles)) Rmdfiles <- find_f(path, "^workshop.*[Rr]md$")
 
@@ -30,18 +30,3 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
 
   invisible(NULL)
 }
-
-
-download_workshop <- function(id, path, verbose) {
-  f <- tempfile(tmpdir = ".")
-  download.file(ghurl(id), f, quiet = !verbose)
-  unzip(f, exdir = path)
-  unlink(f)
-  invisible(NULL)
-}
-
-find_f <- function(path = ".", pattern) list.files(path = path, pattern =
-  pattern, recursive = TRUE, full.names = TRUE)
-
-ghurl <- function(id)
-  sprintf("https://github.com/QCBSRworkshops/workshop%02d/archive/dev.zip", id)
