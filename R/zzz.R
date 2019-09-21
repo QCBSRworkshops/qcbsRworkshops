@@ -41,7 +41,7 @@ compare_copy_files <- function(fl1, fl2, verbose = TRUE) {
     if (!out) {
       file.copy(fl1, fl2, overwrite = TRUE)
       if (verbose) success_msg("'", fl2, "' successfully updated!")
-    }
+    } else success_msg(fl2, " already up to date!")
   } else {
     file.copy(fl1, fl2)
     if (verbose) success_msg("'", fl2, "' successfully updated!")

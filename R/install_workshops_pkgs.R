@@ -22,7 +22,7 @@ install_workshop_pkgs_indiv <- function(file = "pkgs.yaml", verbose = TRUE) {
 
   nbpkgs <- Reduce("+", lapply(ls_file, length))
   if (nbpkgs) {
-    if (verbose) message(nbpkgs, " packages required.")
+    if (verbose) message(crayon::blue(nbpkgs, "packages required."))
     if (length(ls_file$cran_pkgs)) {
       install_cran_pkgs(ls_file$cran_pkgs)
     }
@@ -37,7 +37,8 @@ install_workshop_pkgs_indiv <- function(file = "pkgs.yaml", verbose = TRUE) {
          install_github(ls_file$github_pkgs[[i]])
         }
     }
-  } else if (verbose) message("No packages to be installed")
+    success_msg("Packages successfully installed")
+  } else if (verbose) success_msg("Packages required are already installed")
 
   invisible(ls_file)
 }
