@@ -10,7 +10,7 @@
 #' @importFrom remotes install_github
 #' @importFrom rmarkdown render
 #' @importFrom tools md5sum
-#' @importFrom utils download.file install.packages installed.packages unzip
+#' @importFrom utils download.file install.packages unzip
 #' @importFrom yaml read_yaml
 
 "_PACKAGE"

@@ -1,4 +1,8 @@
-# qcbsRworkshops 0.0.2.9000
+# qcbsRworkshops 0.0.3.900
+
+* test installed packages with `requireNamespace()`
+
+# qcbsRworkshops 0.0.3
 
 * add `extract_Rcode_workshops()` :sparkles:
 * `update_template()` handles missing files.

@@ -1,6 +1,6 @@
 Package: qcbsRworkshops
 Title: Download, update and render QCBS R workshops
-Version: 0.0.2.9000
+Version: 0.0.3.9000
 Authors@R:
   c(
     person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),

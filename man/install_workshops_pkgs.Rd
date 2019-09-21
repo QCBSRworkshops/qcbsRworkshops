@@ -2,9 +2,12 @@
 % Please edit documentation in R/install_workshops_pkgs.R
 \name{install_workshops_pkgs}
 \alias{install_workshops_pkgs}
+\alias{install_workshop_pkgs_indiv}
 \title{Read list of dependencies and install packages}
 \usage{
 install_workshops_pkgs(file = "pkgs.yaml", verbose = TRUE)
+
+install_workshop_pkgs_indiv(file = "pkgs.yaml", verbose = TRUE)
 }
 \arguments{
 \item{file}{path to the list of dependencies}
