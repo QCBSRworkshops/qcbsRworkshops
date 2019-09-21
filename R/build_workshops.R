@@ -30,11 +30,8 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     update_template(path, verbose = verbose)
 
   render_workshops(Rmdfiles, verbose = verbose)
-  message(crayon::green(
-    paste0(cli::symbol$tick, " Workshop", gsub(".*/", "", Rmdfiles),
+  success_msg("Workshop", gsub(".*/", "", Rmdfiles),
       " successfully rendered.\n")
-    )
-  )
 
   invisible(NULL)
 }

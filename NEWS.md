@@ -1,6 +1,7 @@
 # qcbsRworkshops 0.0.3.900
 
 * test installed packages with `requireNamespace()`
+* add `success_msg()` :sparkles:
 
 # qcbsRworkshops 0.0.3
 

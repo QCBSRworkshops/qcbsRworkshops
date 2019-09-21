@@ -40,11 +40,11 @@ compare_copy_files <- function(fl1, fl2, verbose = TRUE) {
     out <- md5sum(fl1) == md5sum(fl2)
     if (!out) {
       file.copy(fl1, fl2, overwrite = TRUE)
-      if (verbose) message("'", fl2, "' successfully updated!")
+      if (verbose) success_msg("'", fl2, "' successfully updated!")
     }
   } else {
     file.copy(fl1, fl2)
-    if (verbose) message("'", fl2, "' successfully updated!")
+    if (verbose) success_msg("'", fl2, "' successfully updated!")
     out <- NULL
   }
   invisible(out)
@@ -61,3 +61,7 @@ find_d <- function(path = ".", pattern) {
 
 ghurl <- function(id)
   sprintf(paste0(baseURL(), "/workshop%02d/archive/dev.zip"), as.numeric(id))
+
+success_msg <- function(...) {
+  message(crayon::green(paste0(cli::symbol$tick, " ", ...)))
+}
