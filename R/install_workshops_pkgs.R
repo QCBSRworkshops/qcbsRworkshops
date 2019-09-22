@@ -2,6 +2,7 @@
 #'
 #' @param file path to the list of dependencies
 #' @param verbose a logical. Should extra information be reported on progress?
+#' @param x a character string of the name of a package.
 #'
 #' @export
 
@@ -43,8 +44,8 @@ install_workshop_pkgs_indiv <- function(file = "pkgs.yaml", verbose = TRUE) {
   invisible(ls_file)
 }
 
-
-
+#' @rdname install_workshops_pkgs
+#' @export
 install_cran_pkgs <- function(x) {
   for (i in seq_along(x)) {
     if (!requireNamespace(x[i], quietly = TRUE))
@@ -53,6 +54,8 @@ install_cran_pkgs <- function(x) {
   invisible(NULL)
 }
 
+#' @rdname install_workshops_pkgs
+#' @export
 install_cran_archived_pkgs <- function(x) {
   for (i in seq_along(x)) {
     if (!requireNamespace(x[[i]]$pkgname, quietly = TRUE)) {
@@ -64,6 +67,8 @@ install_cran_archived_pkgs <- function(x) {
   invisible(NULL)
 }
 
+#' @rdname install_workshops_pkgs
+#' @export
 install_repos_pkgs <- function(x) {
   for (i in seq_along(x)) {
     if (!requireNamespace(x[[i]]$pkgname, quietly = TRUE)) {
