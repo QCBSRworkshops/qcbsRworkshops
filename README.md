@@ -1,6 +1,8 @@
 # qcbsRworkshops
 
 [![Build Status](https://travis-ci.org/QCBSRworkshops/qcbsRworkshops.svg?branch=master)](https://travis-ci.org/QCBSRworkshops/qcbsRworkshops)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+
 
 The goal of qcbsRworkshops :package: is to ease the development of the QCBS R workshops.
 
@@ -71,6 +73,14 @@ update_template("path2workshop")
 extract_Rcode_workshops("path2workshop")
 ```
 
+### Presenter email
+
+``` r
+mail_workshop(7, "Kevin Cazelles",
+   details_fr = "à l'UdeM, salle A-2553,  campus MIL, le vendredi 28 Février 2010 de 13h à 17h",
+   details_en = "at the UdeM, MIL campus, room A-2553, on Friday February 28th 2020, 1pm-5pm"
+)
+```
 
 ## Contributor Code of Conduct
 

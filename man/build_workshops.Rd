@@ -4,8 +4,14 @@
 \alias{build_workshops}
 \title{Render workshops}
 \usage{
-build_workshops(path = ".", download = FALSE, id = NULL,
-  Rmdfiles = NULL, update_template = FALSE, verbose = TRUE)
+build_workshops(
+  path = ".",
+  download = FALSE,
+  id = NULL,
+  Rmdfiles = NULL,
+  update_template = FALSE,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{path}{path where the workshops files are or a path to a folder where the files will be extracted if download is set to \code{TRUE}.}

@@ -25,7 +25,6 @@ template_files <- function() c(
     "qcbsR2.css"
   )
 
-
 download_template <- function(verbose = FALSE) {
   f <- tempfile(tmpdir = ".", fileext = ".zip")
   download.file(paste0(baseURL(), qcbstemplate()), f, quiet = !verbose)
@@ -58,10 +57,10 @@ find_d <- function(path = ".", pattern) {
   ld[grepl(pattern, ld)]
 }
 
-
 ghurl <- function(id)
   sprintf(paste0(baseURL(), "/workshop%02d/archive/dev.zip"), as.numeric(id))
 
 success_msg <- function(...) {
   message(crayon::green(paste0(cli::symbol$tick, " ", ...)))
 }
+

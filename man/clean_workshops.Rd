@@ -4,8 +4,7 @@
 \alias{clean_workshops}
 \title{Clean up workshop folder}
 \usage{
-clean_workshops(path = ".", files = TRUE, cache = TRUE,
-  verbose = TRUE)
+clean_workshops(path = ".", files = TRUE, cache = TRUE, verbose = TRUE)
 }
 \arguments{
 \item{path}{path where the workshops files are to be cleaned up.}

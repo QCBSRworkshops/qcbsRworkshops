@@ -1,4 +1,9 @@
-# qcbsRworkshops 0.0.3.900
+# qcbsRworkshops 0.0.5
+
+* `workshop_df()` returns a data frame with the names of the workshops.
+* `mail_workshop()` generates presenter emails.
+
+# qcbsRworkshops 0.0.4
 
 * test installed packages with `requireNamespace()`
 * add `success_msg()` :sparkles:

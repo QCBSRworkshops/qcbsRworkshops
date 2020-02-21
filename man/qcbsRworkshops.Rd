@@ -18,11 +18,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Kevin Cazelles \email{kcazelle@uoguelph.ca} (0000-0001-6619-9874)
+\strong{Maintainer}: Kevin Cazelles \email{kcazelle@uoguelph.ca} (\href{https://orcid.org/0000-0001-6619-9874}{ORCID})
 
 Authors:
 \itemize{
-  \item Marie-Hélène Brice (0000-0003-0390-4833)
+  \item Marie-Hélène Brice (\href{https://orcid.org/0000-0003-0390-4833}{ORCID})
 }
 
 }
