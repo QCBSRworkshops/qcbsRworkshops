@@ -9,7 +9,8 @@ mail_workshop(
   pres_name,
   lang = c("both", "en", "fr"),
   details_en = "",
-  details_fr = ""
+  details_fr = "",
+  markdownify = TRUE
 )
 }
 \arguments{
@@ -17,11 +18,15 @@ mail_workshop(
 
 \item{pres_name}{a character string with the presenter name.}
 
-\item{lang}{the langage of the mail by default the mail written}
+\item{lang}{the langage of the mail, by default mail will contain
+a French and an English version.}
 
 \item{details_en}{a character string indicating where and when the workshop will be held in English.}
 
 \item{details_fr}{same as \code{details_en} but in French.}
+
+\item{markdownify}{a logical. Should \url{balstula::md()} be used. Default
+is set to \code{TRUE}.}
 }
 \description{
 Generate presenter email to be sent two weeks beforehand.
