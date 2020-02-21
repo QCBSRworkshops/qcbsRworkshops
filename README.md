@@ -75,17 +75,17 @@ extract_Rcode_workshops("path2workshop")
 
 ### Presenter email
 
-`mail_workshop()` generate emails te be sent to participants ~2 weeks before
-the workshop. Just add your name and the details and an email will be generate
+`mail_workshop()` generates emails te be sent to participants ~2 weeks before
+the workshop. Just add your name and the details and an email will be generated
 that you can copy-paste.
-
 
 ``` r
 mail_workshop(7, pres_name = "Kevin Cazelles", lang = "both",
-   details_fr = "à l'UdeM, salle A-2553,  campus MIL, le vendredi 28 Février 2010 de 13h à 17h",
+   details_fr = "à l'UdeM, salle A-2553, campus MIL, le vendredi 28 Février 2020 de 13h à 17h",
    details_en = "at the UdeM, MIL campus, room A-2553, on Friday February 28th 2020, 1pm-5pm"
 )
 ```
+
 
 ## Contributor Code of Conduct
 
