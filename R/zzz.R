@@ -19,10 +19,10 @@
 baseURL <- function() "https://github.com/QCBSRworkshops"
 qcbstemplate <- function() "/templateWorkshops/archive/master.zip"
 template_files <- function() c(
-    "qcbsR-font.css",
+    "qcbsR-fonts.css",
     "qcbsR-header.html",
     "qcbsR-macros.js",
-    "qcbsR2.css"
+    "qcbsR.css"
   )
 
 download_template <- function(verbose = FALSE) {

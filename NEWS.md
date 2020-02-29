@@ -1,3 +1,7 @@
+# qcbsRworkshops 0.0.5.9000
+
+* Correct list of template files in helper function `template_files()`. 
+
 # qcbsRworkshops 0.0.5
 
 * `workshop_df()` returns a data frame with the names of the workshops.
