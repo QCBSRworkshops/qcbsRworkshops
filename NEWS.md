@@ -1,6 +1,8 @@
 # qcbsRworkshops 0.0.5.9000
 
-* Correct list of template files in helper function `template_files()`. 
+* Properly check the existence of template files. 
+* Correct list of template files in helper function `template_files()`.
+* Better regex for the RMarkdown files of the workshop.
 
 # qcbsRworkshops 0.0.5
 

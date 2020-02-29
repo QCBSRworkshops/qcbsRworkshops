@@ -18,12 +18,12 @@
 
 baseURL <- function() "https://github.com/QCBSRworkshops"
 qcbstemplate <- function() "/templateWorkshops/archive/master.zip"
-template_files <- function() c(
-    "qcbsR-fonts.css",
-    "qcbsR-header.html",
-    "qcbsR-macros.js",
-    "qcbsR.css"
-  )
+template_files <- function(path) {
+  paste(rep(path, each = 4), 
+    c("qcbsR-fonts.css","qcbsR-header.html","qcbsR-macros.js","qcbsR.css"), 
+    sep="/")
+}
+
 
 download_template <- function(verbose = FALSE) {
   f <- tempfile(tmpdir = ".", fileext = ".zip")

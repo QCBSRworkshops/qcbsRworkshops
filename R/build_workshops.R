@@ -18,16 +18,21 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     if (!dir.exists(path)) dir.create(path)
     path2 <- tempfile(tmpdir = path)
     download_workshop_indiv(id, path2, verbose)
-    Rmdfiles <- find_f(path2, "^workshop.*[Rr]md$")
-  } else if (is.null(Rmdfiles)) Rmdfiles <- find_f(path, "^workshop.*[Rr]md$")
-
+    Rmdfiles <- find_f(path2, "^workshop[0-9]{2}-[ef][nr].[Rr]md$")
+  } else {
+    if (is.null(Rmdfiles)) 
+      Rmdfiles <- find_f(path, "^workshop[0-9]{2}-[ef][nr].[Rr]md$")
+  }
   if (!length(Rmdfiles)) stop("No source file found")
 
   install_workshops_pkgs(find_f(path, "^pkgs.yaml$"), verbose = verbose)
 
-  t_files <- list.files(path, pattern = "^qcbsR.*[ls]$", full.names = TRUE)
-  if (!all(template_files() %in% t_files | update_template))
+  # check/update template files 
+  t_files <- find_f(, "^qcbsR.*[msj][ls]$") 
+  path2 <- gsub("/workshop[0-9]{2}-[ef][nr].[Rr]md$", "", Rmdfiles)
+  if (!all(template_files(path2) %in% t_files) | update_template)
     update_template(path, verbose = verbose)
+
 
   render_workshops(Rmdfiles, verbose = verbose)
   success_msg("Workshop", gsub(".*/", "", Rmdfiles),
