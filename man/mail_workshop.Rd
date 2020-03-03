@@ -18,7 +18,7 @@ mail_workshop(
 
 \item{pres_name}{a character string with the presenter name.}
 
-\item{lang}{the langage of the mail, by default mail will contain
+\item{lang}{the language of the mail, by default mail will contain
 a French and an English version.}
 
 \item{details_en}{a character string indicating where and when the workshop will be held in English.}

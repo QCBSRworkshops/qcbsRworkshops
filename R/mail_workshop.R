@@ -6,7 +6,7 @@
 #' @param pres_name a character string with the presenter name.
 #' @param details_en a character string indicating where and when the workshop will be held in English.
 #' @param details_fr same as `details_en` but in French.
-#' @param lang the langage of the mail, by default mail will contain
+#' @param lang the language of the mail, by default mail will contain
 #' a French and an English version.
 #' @param markdownify a logical. Should [balstula::md()]() be used. Default
 #' is set to `TRUE`.
