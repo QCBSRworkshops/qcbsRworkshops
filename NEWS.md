@@ -1,4 +1,4 @@
-# qcbsRworkshops 0.0.5.9000
+# qcbsRworkshops 0.1.0
 
 * `build_workshop()` gains an argument `pdf` to export presentation as pdf
 files (call to `pagedown::chrome_print`).
