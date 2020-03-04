@@ -9,6 +9,9 @@
 #' @export
 
 render_workshops <- function(files, verbose = TRUE) {
-  lapply(files, function(x) render(x, quiet = !verbose))
+  lapply(files, function(x) {
+    render(x, quiet = !verbose)
+    success_msg(gsub(".*/", "", x), " successfully rendered.")
+  })
   invisible(NULL)
 }

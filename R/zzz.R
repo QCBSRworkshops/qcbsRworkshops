@@ -6,7 +6,9 @@
 #' @name qcbsRworkshops
 #' @keywords internal
 #'
+#' @importFrom crayon blue green
 #' @importFrom knitr purl
+#' @importFrom pagedown chrome_print
 #' @importFrom remotes install_github
 #' @importFrom rmarkdown render
 #' @importFrom tools md5sum
@@ -19,8 +21,8 @@
 baseURL <- function() "https://github.com/QCBSRworkshops"
 qcbstemplate <- function() "/templateWorkshops/archive/master.zip"
 template_files <- function(path) {
-  paste(rep(path, each = 4), 
-    c("qcbsR-fonts.css","qcbsR-header.html","qcbsR-macros.js","qcbsR.css"), 
+  paste(rep(path, each = 4),
+    c("qcbsR-fonts.css","qcbsR-header.html","qcbsR-macros.js","qcbsR.css"),
     sep="/")
 }
 
@@ -61,6 +63,9 @@ ghurl <- function(id)
   sprintf(paste0(baseURL(), "/workshop%02d/archive/dev.zip"), as.numeric(id))
 
 success_msg <- function(...) {
-  message(crayon::green(paste0(cli::symbol$tick, " ", ...)))
+  message(green(paste0(cli::symbol$tick, " ", ...)))
 }
+
+info_msg <- function(...)
+  message(blue(paste0(cli::symbol$info, " ", ...)))
 

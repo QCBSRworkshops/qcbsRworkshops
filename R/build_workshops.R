@@ -6,12 +6,13 @@
 #' @param download a logical. Should the workshop source files be downloaded? Default set to `FALSE`, it `TRUE` then `id` must be specified.
 #' @param id workshops identifier.
 #' @param Rmdfiles R Markdown source files, if `NULL` (default) then, files will be searched for in the current directory.
-#' @param update_template Should the template files be updated. Note that if these files are missing then they will be downloaded.
+#' @param update_template a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.
+#' @param pdf a logical. Should a pdf version of the template be produced?
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
 #' @export
 
-build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, update_template = FALSE, verbose = TRUE) {
+build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, update_template = FALSE, pdf = FALSE, verbose = TRUE) {
 
   rx <- "^workshop[0-9]{2}-[ef][nr].[Rr]md$"
 
@@ -36,7 +37,14 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     update_template(path, verbose = verbose)
 
   render_workshops(Rmdfiles, verbose = verbose)
-  success_msg(gsub(".*/", "", Rmdfiles), " successfully rendered.\n")
+
+  if (pdf) {
+    info_msg("converting html files to pdf")
+    html <- gsub("\\.[Rr]md$", "\\.html", Rmdfiles)
+    lapply(html, chrome_print)
+    success_msg("PDF file", ifelse(length(html) > 1, "s", ""),
+     " successfully created.\n")
+  }
 
   invisible(NULL)
 }

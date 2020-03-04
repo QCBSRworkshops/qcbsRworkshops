@@ -23,4 +23,6 @@ test_that("expected behavior", {
   # expect_true(any(grepl("workshop01-fr\\.html$", lsf)))
 })
 
+# build_workshops(id =  6, download = T, pdf =T)  
+
 unlink(dir, recursive = TRUE)

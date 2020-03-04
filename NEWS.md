@@ -1,5 +1,7 @@
 # qcbsRworkshops 0.0.5.9000
 
+* `build_workshop()` gains an argument `pdf` to export presentation as pdf
+files (call to `pagedown::chrome_print`).
 * New function `get_badges()` returns badges for README.
 * Properly check the existence of template files.
 * Correct list of template files in helper function `template_files()`.

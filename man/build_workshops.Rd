@@ -10,6 +10,7 @@ build_workshops(
   id = NULL,
   Rmdfiles = NULL,
   update_template = FALSE,
+  pdf = FALSE,
   verbose = TRUE
 )
 }
@@ -22,7 +23,9 @@ build_workshops(
 
 \item{Rmdfiles}{R Markdown source files, if \code{NULL} (default) then, files will be searched for in the current directory.}
 
-\item{update_template}{Should the template files be updated. Note that if these files are missing then they will be downloaded.}
+\item{update_template}{a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.}
+
+\item{pdf}{a logical. Should a pdf version of the template be produced?}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }
