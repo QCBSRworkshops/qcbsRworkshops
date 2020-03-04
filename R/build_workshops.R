@@ -37,6 +37,9 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     update_template(path, verbose = verbose)
 
   render_workshops(Rmdfiles, verbose = verbose)
+  success_msg(
+    paste0(paste(gsub(".*/", "", Rmdfiles), collapse = ", "),
+    " successfully rendered."))
 
   if (pdf) {
     info_msg("converting html files to pdf")

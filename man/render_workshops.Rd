@@ -7,7 +7,7 @@
 render_workshops(files, verbose = TRUE)
 }
 \arguments{
-\item{files}{path to the workshops Rms files to be rendered.}
+\item{files}{path to the workshops Rmd file(s() to be rendered.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }

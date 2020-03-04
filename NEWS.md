@@ -1,3 +1,7 @@
+# qcbsRworkshops 0.1.0.9000
+
+* Simplify message when HTML presentations are successfully rendered. 
+
 # qcbsRworkshops 0.1.0
 
 * `build_workshop()` gains an argument `pdf` to export presentation as pdf

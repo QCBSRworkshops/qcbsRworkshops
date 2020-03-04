@@ -2,7 +2,7 @@
 #'
 #' Convert RMarkdown files to html presentations.
 #'
-#' @param files path to the workshops Rms files to be rendered.
+#' @param files path to the workshops Rmd file(s() to be rendered.
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
 #'
@@ -11,7 +11,6 @@
 render_workshops <- function(files, verbose = TRUE) {
   lapply(files, function(x) {
     render(x, quiet = !verbose)
-    success_msg(gsub(".*/", "", x), " successfully rendered.")
   })
   invisible(NULL)
 }
