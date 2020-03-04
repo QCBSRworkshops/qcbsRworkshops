@@ -1,6 +1,6 @@
 # qcbsRworkshops 0.0.5.9000
 
-* New function `get_badges()` returns badges for readme.
+* New function `get_badges()` returns badges for README.
 * Properly check the existence of template files.
 * Correct list of template files in helper function `template_files()`.
 * Better regex for the RMarkdown files of the workshop.

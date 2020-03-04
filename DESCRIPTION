@@ -22,6 +22,7 @@ Imports:
     crayon,
     devtools,
     knitr,
+    pagedown,
     remotes,
     rmarkdown,
     tools,
