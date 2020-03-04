@@ -14,3 +14,7 @@ get_badges(workshop_id, lang = c("en", "fr"))
 \description{
 Return bagdes for a given workshop.
 }
+\examples{
+get_badges(1)
+get_badges(4, lang = "fr")
+}

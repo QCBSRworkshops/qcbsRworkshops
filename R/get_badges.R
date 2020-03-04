@@ -2,6 +2,10 @@
 #'
 #' @param workshop_id workshop identifier, see [workshops_df()].
 #' @param lang the language for the badges.
+#' @export
+#' @examples
+#' get_badges(1)
+#' get_badges(4, lang = "fr")
 
 get_badges <- function(workshop_id , lang=c("en", "fr")) {
 
