@@ -11,6 +11,7 @@ build_workshops(
   Rmdfiles = NULL,
   update_template = FALSE,
   pdf = FALSE,
+  upgrade = "never",
   verbose = TRUE
 )
 }
@@ -26,6 +27,10 @@ build_workshops(
 \item{update_template}{a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.}
 
 \item{pdf}{a logical. Should a pdf version of the template be produced?}
+
+\item{upgrade}{Should how of date packages be updated? One of "default",
+"ask", "always", or "never". "default", see \code{\link[remotes:install_deps]{remotes::install_deps()}} for
+further details.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }

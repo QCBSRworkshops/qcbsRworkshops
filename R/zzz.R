@@ -9,7 +9,7 @@
 #' @importFrom crayon blue green
 #' @importFrom knitr purl
 #' @importFrom pagedown chrome_print
-#' @importFrom remotes install_github
+#' @importFrom remotes install_github install_deps
 #' @importFrom rmarkdown render
 #' @importFrom tools md5sum
 #' @importFrom utils download.file install.packages unzip

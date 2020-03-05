@@ -1,6 +1,7 @@
 # qcbsRworkshops 0.1.0.9000
 
-* Simplify message when HTML presentations are successfully rendered. 
+* Simplify message when HTML presentations are successfully rendered.
+* `install_workshops_pkgs_remotes()` use package `remotes` to install packages required for a given workshop.
 
 # qcbsRworkshops 0.1.0
 

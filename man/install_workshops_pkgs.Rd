@@ -2,6 +2,7 @@
 % Please edit documentation in R/install_workshops_pkgs.R
 \name{install_workshops_pkgs}
 \alias{install_workshops_pkgs}
+\alias{install_workshops_pkgs_remotes}
 \alias{install_workshop_pkgs_indiv}
 \alias{install_cran_pkgs}
 \alias{install_cran_archived_pkgs}
@@ -9,6 +10,8 @@
 \title{Read list of dependencies and install packages}
 \usage{
 install_workshops_pkgs(file = "pkgs.yaml", verbose = TRUE)
+
+install_workshops_pkgs_remotes(path, ...)
 
 install_workshop_pkgs_indiv(file = "pkgs.yaml", verbose = TRUE)
 
@@ -22,6 +25,10 @@ install_repos_pkgs(x)
 \item{file}{path to the list of dependencies}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
+
+\item{path}{path where the workshops files}
+
+\item{...}{further arguments passed to \code{\link[remotes:install_deps]{remotes::install_deps()}}.}
 
 \item{x}{a character string of the name of a package.}
 }

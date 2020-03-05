@@ -3,6 +3,8 @@
 #' @param file path to the list of dependencies
 #' @param verbose a logical. Should extra information be reported on progress?
 #' @param x a character string of the name of a package.
+#' @param path path where the workshops files
+#' @param ... further arguments passed to [remotes::install_deps()].
 #'
 #' @export
 
@@ -14,6 +16,16 @@ install_workshops_pkgs <- function(file = "pkgs.yaml", verbose = TRUE) {
   }
   invisible(NULL)
 }
+
+
+#' @rdname install_workshops_pkgs
+#' @export
+install_workshops_pkgs_remotes <- function(path, ...) {
+  des <- find_f(path, "^DESCRIPTION")
+  lapply(gsub("/[^/]*$", "", des), function(x) install_deps(x, ...))
+  invisible(NULL)
+}
+
 
 #' @rdname install_workshops_pkgs
 #' @export

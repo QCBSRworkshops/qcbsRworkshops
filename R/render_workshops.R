@@ -1,10 +1,9 @@
 #' Render workshops
 #'
-#' Convert RMarkdown files to html presentations.
+#' Convert R Markdown files to HTML presentations.
 #'
-#' @param files path to the workshops Rmd file(s() to be rendered.
+#' @param files path to the workshops' Rmd file(s) to be rendered.
 #' @param verbose a logical. Should extra information be reported on progress?
-#'
 #'
 #' @export
 

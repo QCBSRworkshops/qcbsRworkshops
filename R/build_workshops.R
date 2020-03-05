@@ -8,11 +8,14 @@
 #' @param Rmdfiles R Markdown source files, if `NULL` (default) then, files will be searched for in the current directory.
 #' @param update_template a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.
 #' @param pdf a logical. Should a pdf version of the template be produced?
+#' @param upgrade Should how of date packages be updated? One of "default",
+#' "ask", "always", or "never". "default", see [remotes::install_deps()] for
+#'  further details.
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
 #' @export
 
-build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, update_template = FALSE, pdf = FALSE, verbose = TRUE) {
+build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, update_template = FALSE, pdf = FALSE, upgrade = "never", verbose = TRUE) {
 
   rx <- "^workshop[0-9]{2}-[ef][nr].[Rr]md$"
 
@@ -28,11 +31,15 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
   }
   if (!length(Rmdfiles)) stop("No source file found!")
 
-  install_workshops_pkgs(find_f(path, "^pkgs.yaml$"), verbose = verbose)
+  if (length(find_f(path, "^pkgs.yaml$"))) {
+      install_workshops_pkgs(find_f(path, "^pkgs.yaml$"), verbose = verbose)
+  }
+  ## New way to install packages using remotes
+  install_workshops_pkgs_remotes(path, upgrade = "never")
 
   # check/update template files
+  path2 <- gsub("/[^/]*$", "", Rmdfiles)
   t_files <- find_f(path, "^qcbsR.*[msj][ls]$")
-  path2 <- gsub(paste0("/", rx), "", Rmdfiles)
   if (!all(template_files(path2) %in% t_files) | update_template)
     update_template(path, verbose = verbose)
 
