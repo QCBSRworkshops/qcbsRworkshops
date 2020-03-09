@@ -1,3 +1,7 @@
+# qcbsRworkshops 0.2.9000
+
+* New function `list_packages()` to create a list of package for the first slides of package.
+
 # qcbsRworkshops 0.2.0
 
 * Use GitHub Actions instead of Travis
