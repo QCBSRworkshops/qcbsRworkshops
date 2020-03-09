@@ -2,15 +2,19 @@
 #'
 #' @param workshop_id workshop identifier, see [workshops_df()].
 #' @param lang the language for the badges (either "en" or "fr").
+#' @param style badges style.
 #' @param clip a logical. Should the badges be copied to the clipboard.
 #' @export
 #' @examples
 #' get_badges(1, clip = FALSE)
 #' get_badges(4, lang = "fr", clip = FALSE)
 
-get_badges <- function(workshop_id, lang = c("en", "fr"), clip = TRUE) {
+get_badges <- function(workshop_id, lang = c("en", "fr"),
+  style = c("flat-square", "plastic", "flat", "for-the-badge", "social"),
+  clip = TRUE) {
 
   lang <- match.arg(lang)
+  style <- match.arg(style)
   id2 <- sprintf("%02d", workshop_id)
 
   if (lang == "en") {
@@ -21,22 +25,24 @@ get_badges <- function(workshop_id, lang = c("en", "fr"), clip = TRUE) {
     atl <- "Atelier"
   }
 
-  wiq <- glue("https://wiki.qcbs.ca/r_{tolower(prs)}{workshop_id}")
+  wiq <- glue("https://wiki.qcbs.ca/r_{tolower(atl)}{workshop_id}")
 
   wid <- glue("workshop{workshop_id}")
   wid2 <- sprintf("workshop%02d", workshop_id)
   basurl <- glue("https://qcbsrworkshops.github.io/{wid2}/{wid2}-{lang}")
 
-  tra <- get_badge_travis("QCBSRworkshops", wid2, "dev")
-  gh <- get_badge_gh("QCBSRworkshops", wid2, "dev", color = "6f42c1")
+  tra <- get_badge_travis("QCBSRworkshops", wid2, "dev", style = style)
+  gh <- get_badge_gh("QCBSRworkshops", wid2, "dev", color = "6f42c1",
+    style = style)
   html <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.html"),
-    logo = "html5", label = prs, message = id2, color="red")
+    logo = "html5", label = prs, message = id2, color="red", style = style)
   pdf <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.pdf"),
-    logo = "adobe-acrobat-reader", label = prs, message = id2, color="red")
+    logo = "adobe-acrobat-reader", label = prs, message = id2, color="red",
+    style = style)
   wiki <- get_badge_one(url = wiq, logo="wikipedia", label = "wiki",
-    message = id2)
+    message = id2, style = style)
   scr <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.R"),
-  logo = "r", label = "script", message = id2, color = "2a50b8")
+  logo = "r", label = "script", message = id2, color = "2a50b8", style = style)
 
   out <- paste(tra, gh, wiki, html, pdf, scr, sep="\n")
   cat(out, "\n")

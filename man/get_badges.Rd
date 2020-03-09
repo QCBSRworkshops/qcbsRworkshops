@@ -4,12 +4,19 @@
 \alias{get_badges}
 \title{Return badges for a given workshop.}
 \usage{
-get_badges(workshop_id, lang = c("en", "fr"), clip = TRUE)
+get_badges(
+  workshop_id,
+  lang = c("en", "fr"),
+  style = c("flat-square", "plastic", "flat", "for-the-badge", "social"),
+  clip = TRUE
+)
 }
 \arguments{
 \item{workshop_id}{workshop identifier, see \code{\link[=workshops_df]{workshops_df()}}.}
 
 \item{lang}{the language for the badges (either "en" or "fr").}
+
+\item{style}{badges style.}
 
 \item{clip}{a logical. Should the badges be copied to the clipboard.}
 }
