@@ -1,10 +1,10 @@
 # qcbsRworkshops
 
-[![Build Status](https://travis-ci.org/QCBSRworkshops/qcbsRworkshops.svg?branch=master)](https://travis-ci.org/QCBSRworkshops/qcbsRworkshops)
+[![R build status](https://github.com/QCBSRworkshops/qcbsRworkshops/workflows/R-CMD-check/badge.svg)](https://github.com/QCBSRworkshops/qcbsRworkshops/actions)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 
 
-The goal of qcbsRworkshops :package: is to ease the development of the QCBS R workshops.
+The goal of the qcbsRworkshops :package: is to ease the development and editions of the QCBS R workshops.
 
 
 ## Installation
