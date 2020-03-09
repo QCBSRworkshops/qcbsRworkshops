@@ -9,8 +9,9 @@ extract_Rcode_workshops(path = ".", verbose = TRUE)
 \arguments{
 \item{path}{path to a folder containing one or more workshops.}
 
-\item{verbose}{a logical. Should extra information be reported on progress?}
+\item{verbose}{a logical. Should extra information be reported on
+progress?}
 }
 \description{
-Extract R code from workshops RMarkdown files.
+Extract R code from workshops R Markdown files.
 }

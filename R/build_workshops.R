@@ -8,6 +8,7 @@
 #' @param Rmdfiles R Markdown source files, if `NULL` (default) then, files will be searched for in the current directory.
 #' @param update_template a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.
 #' @param pdf a logical. Should a pdf version of the template be produced?
+#' @param script a logical. Should the R script be extracted?
 #' @param upgrade Should how of date packages be updated? One of "default",
 #' "ask", "always", or "never". "default", see [remotes::install_deps()] for
 #'  further details.
@@ -15,9 +16,11 @@
 #'
 #' @export
 
-build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = NULL, update_template = FALSE, pdf = FALSE, upgrade = "never", verbose = TRUE) {
+build_workshops <- function(path = ".", download = FALSE, id = NULL,
+  Rmdfiles = NULL, update_template = FALSE, pdf = FALSE, script = FALSE,
+  upgrade = "never", verbose = TRUE) {
 
-  rx <- "^workshop[0-9]{2}-[ef][nr].[Rr]md$"
+  rx <- "^workshop[0-9]{2}-[ef][nr]\\.[Rr]md$"
 
   if (download) {
     if (is.null(id)) stop("`id` must be specified!")
@@ -53,7 +56,13 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL, Rmdfiles = 
     html <- gsub("\\.[Rr]md$", "\\.html", Rmdfiles)
     lapply(html, chrome_print)
     success_msg("PDF file", ifelse(length(html) > 1, "s", ""),
-     " successfully created.\n")
+     " successfully created.")
+  }
+  if (script) {
+    info_msg("extracting R code from the R Markdown files")
+    extract_Rcode_workshops(path, verbose = FALSE)
+    success_msg("R script", ifelse(length(Rmdfiles) > 1, "s", ""),
+     " successfully created.")
   }
 
   invisible(NULL)
