@@ -28,7 +28,7 @@ get_badges <- function(workshop_id, lang = c("en", "fr"), clip = TRUE) {
   basurl <- glue("https://qcbsrworkshops.github.io/{wid2}/{wid2}-{lang}")
 
   tra <- get_badge_travis("QCBSRworkshops", wid2, "dev")
-  gh <- get_badge_indiv("QCBSRworkshops", wid2, "dev", color = "6f42c1")
+  gh <- get_badge_gh("QCBSRworkshops", wid2, "dev", color = "6f42c1")
   html <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.html"),
     logo = "html5", label = prs, message = id2, color="red")
   pdf <- get_badge_one(url = glue("?"),
@@ -66,12 +66,13 @@ get_badge_one <- function(url = NULL, main = url_shield.io(),
 get_badge_travis <- function(user, repo, branch, ...) {
   main <- glue("https://img.shields.io/travis/{user}/{repo}/{branch}?")
   url <- glue("https://travis-ci.org/{user}/{repo}")
-  get_badge_one(url, main, logo="travis", ...)
+  get_badge_one(url, main, logo="travis", alt = "Build Status", ...)
 }
 
-get_badge_indiv <- function(user, repo, branch, ...) {
+get_badge_gh <- function(user, repo, branch, ...) {
   url <- glue("https://github.com/{user}/{repo}")
-  get_badge_one(url, logo="github", label = "repo", message = branch, ...)
+  get_badge_one(url, logo="github", label = "repo", message = branch,
+  ...)
 }
 
 url_shield.io <- function() "https://img.shields.io/static/v1?"

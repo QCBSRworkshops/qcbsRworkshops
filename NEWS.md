@@ -1,4 +1,4 @@
-# qcbsRworkshops 0.1.0.9000
+# qcbsRworkshops 0.2.0
 
 * Use GitHub Actions instead of Travis
 * `build_workshop()` gains an argument `script` to export R code.
@@ -14,7 +14,7 @@ files (call to `pagedown::chrome_print`).
 * New function `get_badges()` returns badges for README.
 * Properly check the existence of template files.
 * Correct list of template files in helper function `template_files()`.
-* Better regex for the RMarkdown files of the workshop.
+* Better regex for the R Markdown files of the workshop.
 
 # qcbsRworkshops 0.0.5
 
