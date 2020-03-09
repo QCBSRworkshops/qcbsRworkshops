@@ -2,6 +2,8 @@
 
 * Simplify message when HTML presentations are successfully rendered.
 * `install_workshops_pkgs_remotes()` use package `remotes` to install packages required for a given workshop.
+* `get_badges()` now returns 5 badges.
+* `get_badges()` gains argument `clip` to copy badges to the clipboard.
 
 # qcbsRworkshops 0.1.0
 

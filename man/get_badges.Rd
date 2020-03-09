@@ -2,19 +2,21 @@
 % Please edit documentation in R/get_badges.R
 \name{get_badges}
 \alias{get_badges}
-\title{Return bagdes for a given workshop.}
+\title{Return badges for a given workshop.}
 \usage{
-get_badges(workshop_id, lang = c("en", "fr"))
+get_badges(workshop_id, lang = c("en", "fr"), clip = TRUE)
 }
 \arguments{
 \item{workshop_id}{workshop identifier, see \code{\link[=workshops_df]{workshops_df()}}.}
 
-\item{lang}{the language for the badges.}
+\item{lang}{the language for the badges (either "en" or "fr").}
+
+\item{clip}{a logical. Should the badges be copied to the clipboard.}
 }
 \description{
-Return bagdes for a given workshop.
+Return badges for a given workshop.
 }
 \examples{
-get_badges(1)
-get_badges(4, lang = "fr")
+get_badges(1, clip = FALSE)
+get_badges(4, lang = "fr", clip = FALSE)
 }

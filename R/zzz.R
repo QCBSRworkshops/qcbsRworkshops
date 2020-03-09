@@ -7,6 +7,8 @@
 #' @keywords internal
 #'
 #' @importFrom crayon blue green
+#' @importFrom glue glue
+#' @importFrom clipr write_clip
 #' @importFrom knitr purl
 #' @importFrom pagedown chrome_print
 #' @importFrom remotes install_github install_deps
