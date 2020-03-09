@@ -31,11 +31,12 @@ get_badges <- function(workshop_id, lang = c("en", "fr"), clip = TRUE) {
   gh <- get_badge_gh("QCBSRworkshops", wid2, "dev", color = "6f42c1")
   html <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.html"),
     logo = "html5", label = prs, message = id2, color="red")
-  pdf <- get_badge_one(url = glue("?"),
+  pdf <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.pdf"),
     logo = "adobe-acrobat-reader", label = prs, message = id2, color="red")
   wiki <- get_badge_one(url = wiq, logo="wikipedia", label = "wiki",
     message = id2)
-  scr <- get_badge_one(logo = "r", label = "script", message = id2, color = "2a50b8")
+  scr <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.R"),
+  logo = "r", label = "script", message = id2, color = "2a50b8")
 
   out <- paste(tra, gh, wiki, html, pdf, scr, sep="\n")
   cat(out, "\n")

@@ -1,5 +1,6 @@
 # qcbsRworkshops 0.2.9000
 
+* Fix URL in `get_badges()` for pdf files an R scripts. 
 * New function `list_packages()` to create a list of package for the first slides of package.
 
 # qcbsRworkshops 0.2.0
