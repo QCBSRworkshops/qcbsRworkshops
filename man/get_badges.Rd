@@ -8,7 +8,8 @@ get_badges(
   workshop_id,
   lang = c("en", "fr"),
   style = c("flat-square", "plastic", "flat", "for-the-badge", "social"),
-  clip = TRUE
+  clip = TRUE,
+  show = TRUE
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ get_badges(
 \item{style}{badges style.}
 
 \item{clip}{a logical. Should the badges be copied to the clipboard.}
+
+\item{show}{a logical. Should the badges be displayed.}
 }
 \description{
 Return badges for a given workshop.

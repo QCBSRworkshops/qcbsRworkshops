@@ -1,6 +1,8 @@
 # qcbsRworkshops 0.2.9000
 
-* `get_badges()` gains an argument `style` to control badges style. 
+* `get_badges()` gains an argument `show` to control whether badges should be
+output. 
+* `get_badges()` gains an argument `style` to control badges style.
 * Fix URL in `get_badges()` for pdf files an R scripts.
 * New function `list_packages()` to create a list of package for the first slides of package.
 
