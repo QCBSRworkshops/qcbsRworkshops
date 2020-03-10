@@ -19,9 +19,9 @@ get_badges(
 
 \item{style}{badges style.}
 
-\item{clip}{a logical. Should the badges be copied to the clipboard.}
+\item{clip}{a logical. Should the badges be copied to the clipboard?}
 
-\item{show}{a logical. Should the badges be displayed.}
+\item{show}{a logical. Should the badges be displayed?}
 }
 \description{
 Return badges for a given workshop.

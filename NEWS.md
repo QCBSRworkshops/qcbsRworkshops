@@ -1,7 +1,7 @@
 # qcbsRworkshops 0.2.9000
 
-* `get_badges()` gains an argument `show` to control whether badges should be
-output. 
+* `get_badges()` and `list_packages()` gain an argument `show` to control text should be
+output.
 * `get_badges()` gains an argument `style` to control badges style.
 * Fix URL in `get_badges()` for pdf files an R scripts.
 * New function `list_packages()` to create a list of package for the first slides of package.
@@ -18,7 +18,7 @@ output.
 # qcbsRworkshops 0.1.0
 
 * `build_workshop()` gains an argument `pdf` to export presentation as pdf
-files (call to `pagedown::chrome_print`).
+files (call to `pagedown::chrome_print()`).
 * New function `get_badges()` returns badges for README.
 * Properly check the existence of template files.
 * Correct list of template files in helper function `template_files()`.

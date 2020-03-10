@@ -3,8 +3,8 @@
 #' @param workshop_id workshop identifier, see [workshops_df()].
 #' @param lang the language for the badges (either "en" or "fr").
 #' @param style badges style.
-#' @param clip a logical. Should the badges be copied to the clipboard.
-#' @param show a logical. Should the badges be displayed.
+#' @param clip a logical. Should the badges be copied to the clipboard?
+#' @param show a logical. Should the badges be displayed?
 #' @export
 #' @examples
 #' get_badges(1, clip = FALSE)
@@ -45,10 +45,12 @@ get_badges <- function(workshop_id, lang = c("en", "fr"),
   scr <- get_badge_one(url = glue("{basurl}/{wid2}-{lang}.R"),
   logo = "r", label = "script", message = id2, color = "2a50b8", style = style)
 
-  if (show) cat(paste(tra, gh, wiki, html, pdf, scr, sep="\n"), "\n")
-  if (clip) write_clip(paste(tra, gh, wiki, html, pdf, scr, sep="\n"))
-
-  info_msg("badges copied in your clipboard!")
+  if (show)
+    cat(paste(tra, gh, wiki, html, pdf, scr, sep="\n"), "\n")
+  if (clip) {
+    write_clip(paste(tra, gh, wiki, html, pdf, scr, sep="\n"))
+    info_msg("badges copied in your clipboard!")
+  }
   invisible(c(tra, gh, wiki, html, pdf, scr))
 }
 
