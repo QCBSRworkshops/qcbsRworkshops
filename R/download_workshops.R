@@ -1,6 +1,6 @@
 #' Download workshops
 #'
-#' Download a selecttion of workshops.
+#' Download a selection of workshops.
 #'
 #' @param path path where the workshops files are or a path to a folder where the files will be extracted if download is set to `TRUE`.
 #' @param ids workshop identifiers.

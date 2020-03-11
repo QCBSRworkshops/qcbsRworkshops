@@ -9,7 +9,6 @@
 #'
 #' @export
 
-
 clean_workshops <- function(path = ".", files = TRUE, cache = TRUE, verbose = TRUE) {
 
   if (!files & !cache) {

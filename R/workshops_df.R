@@ -9,7 +9,7 @@
 
 workshops_df <- function() {
   data.frame(
-    id = 1:10,
+    id = seq_len(10),
     name_fr = c(
       "Introduction \u00e0 R",
       "Charger et manipuler les donn\u00e9es",

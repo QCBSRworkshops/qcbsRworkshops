@@ -14,7 +14,7 @@ download_workshops(ids, path = ".", verbose = TRUE)
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }
 \description{
-Download a selecttion of workshops.
+Download a selection of workshops.
 }
 \examples{
 download_workshops(1)
