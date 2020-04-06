@@ -27,5 +27,3 @@ update_template <- function(path = ".", verbose = TRUE) {
   invisible(NULL)
 }
 
-
-# download.file()

@@ -1,6 +1,7 @@
 Package: qcbsRworkshops
 Title: Download, update and render QCBS R workshops
-Version: 0.3.0
+Version: 0.3.0.9000
+Date: 2020-04-05
 Authors@R:
   c(
     person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),
@@ -12,8 +13,6 @@ Encoding: UTF-8
 URL: https://github.com/QCBSRworkshops/qcbsRworkshops, https://github.com/QCBSRworkshops/QCBSRworkshops.github.io
 BugReports: https://github.com/QCBSRworkshops/qcbsRworkshops/issues
 LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2
 Suggests:
     testthat
 Imports:
@@ -31,3 +30,5 @@ Imports:
     utils,
     yaml,
     xaringan
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0

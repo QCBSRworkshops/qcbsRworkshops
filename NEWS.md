@@ -1,3 +1,7 @@
+# qcbsRworkshops (devel)
+
+* `get_badge_one()` gains one argument `html` to obtain badges in HTML. 
+
 # qcbsRworkshops 0.3.0
 
 * New function `first_slides()` that generates the two first slides.

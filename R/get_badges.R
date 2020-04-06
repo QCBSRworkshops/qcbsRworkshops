@@ -55,9 +55,10 @@ get_badges <- function(workshop_id, lang = c("en", "fr"),
 }
 
 
+# add html
 get_badge_one <- function(url = NULL, main = url_shield.io(),
-  style = "flat-square", label=NULL, message=NULL, color = NULL, logo = NULL, logoColor = NULL,
-  alt = "badge") {
+  style = "flat-square", label = NULL, message = NULL, color = NULL,
+  logo = NULL, logoColor = NULL, alt = "badge", html = FALSE) {
 
   out <- glue("{main}style={style}")
   if (!is.null(label)) out <- glue("{out}&label={label}")
@@ -65,10 +66,15 @@ get_badge_one <- function(url = NULL, main = url_shield.io(),
   if (!is.null(color)) out <- glue("{out}&color={color}")
   if (!is.null(logo)) out <- glue("{out}&logo={logo}")
   if (!is.null(logoColor)) out <- glue("{out}&logoColor={logoColor}")
-  out <- glue("![{alt}]({out})")
+
+  if (html) {
+    out <- glue("<img src='{out}' alt='{alt}'>")
+  } else out <- glue("![{alt}]({out})")
 
   if (!is.null(url)) {
-    sprintf("[%s](%s)", out, url)
+    if (html) {
+      sprintf("<a htref='%s'>%s</a>", url, out)
+    } else sprintf("[%s](%s)", out, url)
   } else out
 }
 
