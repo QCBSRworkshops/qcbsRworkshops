@@ -91,8 +91,3 @@ msgWarning <- function(..., appendLF = TRUE) {
   message(yellow(txt), appendLF = appendLF)
   invisible(txt)
 }
-
-
-msgInfo <- function(...)
-  message(blue(paste0(cli::symbol$info, " ", ...)))
-

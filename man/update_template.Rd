@@ -7,7 +7,7 @@
 update_template(path = ".", verbose = TRUE)
 }
 \arguments{
-\item{path}{path to the workshops where to find the template to be updated.}
+\item{path}{path to the workshops, i.e. where to look for the template to be updated.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 }

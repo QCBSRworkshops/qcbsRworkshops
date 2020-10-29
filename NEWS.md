@@ -1,6 +1,10 @@
+# qcbsRworkshops (devel)
+
+* Minor improvements of README. 
+
 # qcbsRworkshops 0.4.0
 
-* review messages functions.  
+* review message functions.  
 * review CI workflow. 
 * `get_badge_one()` gains one argument `html` to obtain badges in HTML.
 

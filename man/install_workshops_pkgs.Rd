@@ -22,11 +22,11 @@ install_cran_archived_pkgs(x)
 install_repos_pkgs(x)
 }
 \arguments{
-\item{file}{path to the list of dependencies}
+\item{file}{path to the list of dependencies.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}
 
-\item{path}{path where the workshops files}
+\item{path}{path where the workshops files.}
 
 \item{...}{further arguments passed to \code{\link[remotes:install_deps]{remotes::install_deps()}}.}
 

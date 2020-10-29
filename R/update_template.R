@@ -3,7 +3,7 @@
 #' Download the template, check whether the files must be updated and do the
 #' update of required.
 #'
-#' @param path path to the workshops where to find the template to be updated.
+#' @param path path to the workshops, i.e. where to look for the template to be updated.
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
 #' @importFrom rmarkdown render

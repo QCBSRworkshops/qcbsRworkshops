@@ -37,7 +37,7 @@ build_workshops()
 build_workshops("path2workshop")
 ```
 
-2. the sources of a the workshop must be downloaded (a zip file will be downloaded):
+2. the sources of a the workshop must be downloaded, in such case a zip file will be downloaded:
 
 ``` r
 build_workshops(download = TRUE, id = 1)
@@ -45,7 +45,7 @@ build_workshops(download = TRUE, id = 1)
 
 ### Clean workshops
 
-To clean up cache and files created during the build, use
+To clean up cache and files created during the build of the workshop (the slides), use
 
 ``` r
 # if the workshop folder is the current directory (preferred), then use

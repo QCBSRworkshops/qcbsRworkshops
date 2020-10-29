@@ -1,9 +1,9 @@
 #' Read list of dependencies and install packages
 #'
-#' @param file path to the list of dependencies
+#' @param file path to the list of dependencies.
 #' @param verbose a logical. Should extra information be reported on progress?
 #' @param x a character string of the name of a package.
-#' @param path path where the workshops files
+#' @param path path where the workshops files.
 #' @param ... further arguments passed to [remotes::install_deps()].
 #'
 #' @export
