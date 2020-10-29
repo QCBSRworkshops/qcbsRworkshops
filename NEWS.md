@@ -1,4 +1,4 @@
-# qcbsRworkshops (devel)
+# qcbsRworkshops 0.4.0
 
 * review messages functions.  
 * review CI workflow. 
