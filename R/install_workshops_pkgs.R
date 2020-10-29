@@ -50,8 +50,8 @@ install_workshop_pkgs_indiv <- function(file = "pkgs.yaml", verbose = TRUE) {
          install_github(ls_file$github_pkgs[[i]])
         }
     }
-    success_msg("Packages successfully installed")
-  } else if (verbose) success_msg("Packages required are already installed")
+    msgSuccess("Packages successfully installed")
+  } else if (verbose) msgSuccess("Packages required are already installed")
 
   invisible(ls_file)
 }

@@ -30,7 +30,7 @@ list_packages <- function(pkgs, add_cls = TRUE, clip = TRUE, show = FALSE) {
   }
   if (clip) {
     write_clip(out)
-    info_msg("package list copied to the clipboard!")
+    msgInfo("package list copied to the clipboard!")
   }
   invisible(out)
 }

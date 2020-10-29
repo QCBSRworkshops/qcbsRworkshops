@@ -6,7 +6,7 @@
 #' @name qcbsRworkshops
 #' @keywords internal
 #'
-#' @importFrom crayon blue green
+#' @importFrom crayon blue green red yellow 
 #' @importFrom glue glue
 #' @importFrom clipr write_clip
 #' @importFrom knitr purl
@@ -43,11 +43,11 @@ compare_copy_files <- function(fl1, fl2, verbose = TRUE) {
     out <- md5sum(fl1) == md5sum(fl2)
     if (!out) {
       file.copy(fl1, fl2, overwrite = TRUE)
-      if (verbose) success_msg("'", fl2, "' successfully updated!")
-    } else success_msg(fl2, " already up to date!")
+      if (verbose) msgSuccess("'", fl2, "' successfully updated!")
+    } else msgSuccess(fl2, " already up to date!")
   } else {
     file.copy(fl1, fl2)
-    if (verbose) success_msg("'", fl2, "' successfully updated!")
+    if (verbose) msgSuccess("'", fl2, "' successfully updated!")
     out <- NULL
   }
   invisible(out)
@@ -64,10 +64,35 @@ find_d <- function(path = ".", pattern) {
 ghurl <- function(id)
   sprintf(paste0(baseURL(), "/workshop%02d/archive/dev.zip"), as.numeric(id))
 
-success_msg <- function(...) {
-  message(green(paste0(cli::symbol$tick, " ", ...)))
+
+## Message functionc 
+
+
+msgInfo <- function(..., appendLF = TRUE) {
+  txt <- paste(cli::symbol$info, ...)
+  message(blue(txt), appendLF = appendLF)
+  invisible(txt)
 }
 
-info_msg <- function(...)
+msgError <- function(..., appendLF = TRUE) {
+  txt <- paste(cli::symbol$cross, ...)
+  message(red(txt), appendLF = appendLF)
+  invisible(txt)
+}
+
+msgSuccess <- function(..., appendLF = TRUE) {
+  txt <- paste(cli::symbol$tick, ...)
+  message(green(txt), appendLF = appendLF)
+  invisible(txt)
+}
+
+msgWarning <- function(..., appendLF = TRUE) {
+  txt <- paste(cli::symbol$warning, ...)
+  message(yellow(txt), appendLF = appendLF)
+  invisible(txt)
+}
+
+
+msgInfo <- function(...)
   message(blue(paste0(cli::symbol$info, " ", ...)))
 

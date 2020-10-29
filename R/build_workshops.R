@@ -47,21 +47,21 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL,
     update_template(path, verbose = verbose)
 
   render_workshops(Rmdfiles, verbose = verbose)
-  success_msg(
+  msgSuccess(
     paste0(paste(gsub(".*/", "", Rmdfiles), collapse = ", "),
     " successfully rendered."))
 
   if (pdf) {
-    info_msg("converting html files to pdf")
+    msgInfo("converting html files to pdf")
     html <- gsub("\\.[Rr]md$", "\\.html", Rmdfiles)
     lapply(html, chrome_print)
-    success_msg("PDF file", ifelse(length(html) > 1, "s", ""),
+    msgSuccess("PDF file", ifelse(length(html) > 1, "s", ""),
      " successfully created.")
   }
   if (script) {
-    info_msg("extracting R code from the R Markdown files")
+    msgInfo("extracting R code from the R Markdown files")
     extract_Rcode_workshops(path, verbose = FALSE)
-    success_msg("R script", ifelse(length(Rmdfiles) > 1, "s", ""),
+    msgSuccess("R script", ifelse(length(Rmdfiles) > 1, "s", ""),
      " successfully created.")
   }
 
