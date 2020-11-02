@@ -1,8 +1,8 @@
-# qcbsRworkshops (devel)
+# qcbsRworkshops 0.5.0
 
-* add `use_travis()` to add travis CI configuation file.
+* add `use_travis()` to add Travis CI configuration file.
 * `fs` added in dependencies. 
-* Minor improvements of README. 
+* minor improvements of README. 
 
 # qcbsRworkshops 0.4.0
 
