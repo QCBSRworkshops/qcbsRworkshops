@@ -16,6 +16,7 @@
 #' @importFrom tools md5sum
 #' @importFrom utils download.file install.packages unzip
 #' @importFrom yaml read_yaml
+#' @importFrom fs path_package
 
 "_PACKAGE"
 
@@ -64,9 +65,38 @@ find_d <- function(path = ".", pattern) {
 ghurl <- function(id)
   sprintf(paste0(baseURL(), "/workshop%02d/archive/dev.zip"), as.numeric(id))
 
+ 
+# see package usethis (find_template()) for a much better version of this 
+# as I just needed to use files without any changes, I made it simpler. 
+add_file <- function(file_name, file = NULL, force = FALSE, pre = "") {
+  path <- tryCatch(
+    path_package(package = "qcbsRworkshops", "files", file_name),
+    error = function(e) ""
+  )
+  if (identical(path, "")) {
+    msgError(file_name, "not found.")
+    stop()
+  }
+  
+  fl <- paste0(pre, file_name)
+  if (file.exists(fl)) {
+    if (force) {
+      msgWarning("remove", fl)
+      file.remove(fl)
+    } else {
+       msgWarning("skipped", fl, 
+        "already exists (use `force = TRUE` to overwrite it)")
+      return(invisible(FALSE))
+     }
+  }
+  cat(paste(readLines(path, encoding = "UTF-8"), collapse = "\n"), 
+    file = fl)
+  msgSuccess(fl, "added")
+  return(invisible(TRUE))
+}
 
-## Message functionc 
 
+## Message functions 
 
 msgInfo <- function(..., appendLF = TRUE) {
   txt <- paste(cli::symbol$info, ...)

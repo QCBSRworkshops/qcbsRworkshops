@@ -17,12 +17,8 @@ test_that("expected behavior", {
   expect_error(suppressWarnings(
         build_workshops(dir, download = TRUE, id = 0, verbose = FALSE)
       ))
-  # expect_true(any(grepl("workshop01-en\\.html$", lsf)))
-  # expect_true(any(grepl("workshop01-en\\.Rmd$", lsf)))
-  # expect_true(any(grepl("workshop01-fr\\.Rmd$", lsf)))
-  # expect_true(any(grepl("workshop01-fr\\.html$", lsf)))
 })
 
-# build_workshops(id =  6, download = T, pdf =T)  
+# build_workshops(id =  6, download = T, pdf = TRUE)  
 
-unlink(dir, recursive = TRUE)
+# unlink(dir, recursive = TRUE)

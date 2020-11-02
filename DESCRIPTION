@@ -1,7 +1,7 @@
 Package: qcbsRworkshops
 Title: Download, update and render QCBS R workshops
 Version: 0.4.0.9000
-Date: 2020-10-29
+Date: 2020-11-02
 Authors@R:
   c(
     person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),
@@ -21,6 +21,7 @@ Imports:
     clipr,
     crayon,
     devtools,
+    fs,
     glue,
     knitr,
     pagedown,
