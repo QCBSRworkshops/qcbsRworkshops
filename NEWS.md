@@ -1,3 +1,8 @@
+# qcbsRworkshops (devel)
+
+* use `skip_cleanup` in Travis CI configuration file. 
+
+
 # qcbsRworkshops 0.5.0
 
 * add `use_travis()` to add Travis CI configuration file.

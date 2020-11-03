@@ -1,6 +1,6 @@
 Package: qcbsRworkshops
 Title: Download, update and render QCBS R workshops
-Version: 0.5.0
+Version: 0.5.0.9000
 Date: 2020-11-02
 Authors@R:
   c(
