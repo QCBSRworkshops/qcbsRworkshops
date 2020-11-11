@@ -1,5 +1,6 @@
 # qcbsRworkshops (devel)
 
+* `build_workshop()` gains an argument `lang` to select which version of the workshop (the French one, the English one or both) to be built. 
 * use `skip_cleanup` in Travis CI configuration file. 
 * add contributing guidelines. 
 

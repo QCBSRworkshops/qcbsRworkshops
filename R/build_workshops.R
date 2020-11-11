@@ -5,6 +5,8 @@
 #' @param path path where the workshops files are or a path to a folder where the files will be extracted if download is set to `TRUE`.
 #' @param download a logical. Should the workshop source files be downloaded? Default set to `FALSE`, it `TRUE` then `id` must be specified.
 #' @param id workshops identifier.
+#' @param lang language of workshop, either "both" (default), "en" (English) or 
+#' "fr" (French).
 #' @param Rmdfiles R Markdown source files, if `NULL` (default) then, files will be searched for in the current directory.
 #' @param update_template a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.
 #' @param pdf a logical. Should a pdf version of the template be produced?
@@ -16,11 +18,14 @@
 #'
 #' @export
 
-build_workshops <- function(path = ".", download = FALSE, id = NULL,
-  Rmdfiles = NULL, update_template = FALSE, pdf = FALSE, script = FALSE,
-  upgrade = "never", verbose = TRUE) {
-
-  rx <- "^workshop[0-9]{2}-[ef][nr]\\.[Rr]md$"
+build_workshops <- function(path = ".", download = FALSE, id = NULL, 
+  lang = c("both", "en", "fr"), Rmdfiles = NULL, update_template = FALSE, 
+  pdf = FALSE, script = FALSE, upgrade = "never", verbose = TRUE) {
+    
+    
+  lang <- match.arg(lang) 
+  if (lang == "both") lang <- "[ef][nr]"
+  rx <- paste0("^workshop[0-9]{2}-", lang, "\\.[Rr]md$")
 
   if (download) {
     if (is.null(id)) stop("`id` must be specified!")

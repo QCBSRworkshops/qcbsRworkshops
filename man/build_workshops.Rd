@@ -8,6 +8,7 @@ build_workshops(
   path = ".",
   download = FALSE,
   id = NULL,
+  lang = c("both", "en", "fr"),
   Rmdfiles = NULL,
   update_template = FALSE,
   pdf = FALSE,
@@ -22,6 +23,9 @@ build_workshops(
 \item{download}{a logical. Should the workshop source files be downloaded? Default set to \code{FALSE}, it \code{TRUE} then \code{id} must be specified.}
 
 \item{id}{workshops identifier.}
+
+\item{lang}{language of workshop, either "both" (default), "en" (English) or
+"fr" (French).}
 
 \item{Rmdfiles}{R Markdown source files, if \code{NULL} (default) then, files will be searched for in the current directory.}
 

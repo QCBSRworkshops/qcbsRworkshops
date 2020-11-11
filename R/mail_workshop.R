@@ -6,13 +6,13 @@
 #' @param pres_name a character string with the presenter name.
 #' @param details_en a character string indicating where and when the workshop will be held in English.
 #' @param details_fr same as `details_en` but in French.
-#' @param lang the language of the mail, by default mail will contain
+#' @param lang the language of the mail, by default mail will contain both
 #' a French and an English version.
 #' @param markdownify a logical. Should [balstula::md()]() be used. Default
 #' is set to `TRUE`.
 #'
 #' @details
-#' Currently, the email is generated with [blastula::compose_email()] and
+#' Currently, emails ares generated with [blastula::compose_email()] and
 #' you need to copy paste it.
 #'
 #' @export
@@ -25,7 +25,7 @@
 mail_workshop <- function(workshop_id, pres_name, lang = c("both", "en", "fr"),
   details_en = "", details_fr = "", markdownify = TRUE) {
 
-  wkh <- workshops_df()[workshop_id[1L],]
+  wkh <- workshops_df()[workshop_id[1L], ]
   lang <- match.arg(lang)
 
   if (details_fr == "" && (lang == "fr" | lang == "both"))

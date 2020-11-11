@@ -18,7 +18,7 @@ mail_workshop(
 
 \item{pres_name}{a character string with the presenter name.}
 
-\item{lang}{the language of the mail, by default mail will contain
+\item{lang}{the language of the mail, by default mail will contain both
 a French and an English version.}
 
 \item{details_en}{a character string indicating where and when the workshop will be held in English.}
@@ -32,7 +32,7 @@ is set to \code{TRUE}.}
 Generate presenter email to be sent two weeks beforehand.
 }
 \details{
-Currently, the email is generated with \code{\link[blastula:compose_email]{blastula::compose_email()}} and
+Currently, emails ares generated with \code{\link[blastula:compose_email]{blastula::compose_email()}} and
 you need to copy paste it.
 }
 \examples{
