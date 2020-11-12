@@ -7,7 +7,7 @@
 \alias{install_cran_pkgs}
 \alias{install_cran_archived_pkgs}
 \alias{install_repos_pkgs}
-\title{Read list of dependencies and install packages}
+\title{Read list of dependencies and install packages (no longer used).}
 \usage{
 install_workshops_pkgs(file = "pkgs.yaml", verbose = TRUE)
 
@@ -33,5 +33,5 @@ install_repos_pkgs(x)
 \item{x}{a character string of the name of a package.}
 }
 \description{
-Read list of dependencies and install packages
+Read list of dependencies and install packages (no longer used).
 }

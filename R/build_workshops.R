@@ -11,8 +11,8 @@
 #' @param update_template a logical. Should the template files be updated. Note that if these files are missing then they will be downloaded.
 #' @param pdf a logical. Should a pdf version of the template be produced?
 #' @param script a logical. Should the R script be extracted?
-#' @param upgrade Should how of date packages be updated? One of "default",
-#' "ask", "always", or "never". "default", see [remotes::install_deps()] for
+#' @param upgrade One of "default", "ask", "always", or "never". "default", see 
+#' [remotes::install_deps()] for
 #'  further details.
 #' @param verbose a logical. Should extra information be reported on progress?
 #'
@@ -60,14 +60,14 @@ build_workshops <- function(path = ".", download = FALSE, id = NULL,
     msgInfo("converting html files to pdf")
     html <- gsub("\\.[Rr]md$", "\\.html", Rmdfiles)
     lapply(html, chrome_print)
-    msgSuccess("PDF file", ifelse(length(html) > 1, "s", ""),
-     " successfully created.")
+    msgSuccess(paste0("PDF file", ifelse(length(html) > 1, "s", ""),
+     " successfully created."))
   }
   if (script) {
     msgInfo("extracting R code from the R Markdown files")
     extract_Rcode_workshops(path, verbose = FALSE)
-    msgSuccess("R script", ifelse(length(Rmdfiles) > 1, "s", ""),
-     " successfully created.")
+    msgSuccess(paste0("R script", ifelse(length(Rmdfiles) > 1, "s", ""),
+     " successfully created."))
   }
 
   invisible(NULL)

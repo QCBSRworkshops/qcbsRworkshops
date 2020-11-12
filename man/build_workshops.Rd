@@ -35,8 +35,8 @@ build_workshops(
 
 \item{script}{a logical. Should the R script be extracted?}
 
-\item{upgrade}{Should how of date packages be updated? One of "default",
-"ask", "always", or "never". "default", see \code{\link[remotes:install_deps]{remotes::install_deps()}} for
+\item{upgrade}{One of "default", "ask", "always", or "never". "default", see
+\code{\link[remotes:install_deps]{remotes::install_deps()}} for
 further details.}
 
 \item{verbose}{a logical. Should extra information be reported on progress?}

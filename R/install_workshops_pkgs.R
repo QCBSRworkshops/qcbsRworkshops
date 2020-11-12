@@ -1,4 +1,4 @@
-#' Read list of dependencies and install packages
+#' Read list of dependencies and install packages (no longer used).
 #'
 #' @param file path to the list of dependencies.
 #' @param verbose a logical. Should extra information be reported on progress?
